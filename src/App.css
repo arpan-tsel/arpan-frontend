@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Telkomsel-Batik-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Telkomsel Batik Bold'), url('./assets/TelkomselBatikSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Telkomsel-Batik-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Telkomsel Batik Regular'), url('./assets/TelkomselBatikSans-Regular.ttf') format('truetype');
+}
