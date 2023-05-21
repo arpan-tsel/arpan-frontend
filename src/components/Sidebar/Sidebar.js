@@ -24,6 +24,7 @@ const Sidebar = () => {
         refreshToken();
         getUsers();
     }, []);
+    
  
     const refreshToken = async () => {
         try {
@@ -64,17 +65,20 @@ const Sidebar = () => {
         });
         setUsers(response.data);
     }
+    
 
   return (
-    <div>
-  <aside className="main-sidebar sidebar-dark-primary elevation-4">
+  <div id="sidebar">
+  <aside className="main-sidebar sidebar-dark-primary elevation-4" >
+    
     <Link to = '/dashboard'>
     <div className="brand-link">
       <img src={logo} alt="Telkomsel Logo" className="brand-image img-circle elevation-3" style={{opacity: '.8'}} />
       <span className="brand-text font-weight-bold">ARPAN-TSEL</span>
     </div>
+    
     </Link>
-    <div className="sidebar">
+    <div className="sidebar" >
       <nav className="mt-2">
         <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li className="nav-item">
@@ -100,12 +104,12 @@ const Sidebar = () => {
               </p>
             </Link>
           </li>
-          <li className="nav-item menu-open">
-            <a href='#' className="nav-link">
+          <li className="nav-item treeview">
+            <a href='#' className="nav-link ">
               <i className="nav-icon fas"><AiOutlineLineChart/></i>
               <p>
                 Visualization
-                <i className="fas fa-angle-left right" />
+                <i className="fas fa-angle-left right"/>
               </p>
             </a>
             <ul className="nav nav-treeview">
@@ -152,37 +156,36 @@ const Sidebar = () => {
           </li>
 
             {users && users.role === "admin" && (
-              <div>
-              <li className="nav-item">
+              
+              <div className="nav-sidebar">
                 <br/>
-                <a className='nav-link'>
-                <i className="nav-icon fas" ><FaTools/></i>
-                  <p>
-                    Administrator Menu
-                  </p></a></li>
-              <li className="nav-item">
-              <Link to= '/dashboard/usermanagement' className='nav-link'>
-                  <i className="nav-icon far"><FaUsersCog/> </i>
-                  <p>
+                <li className="nav-item menu-close">
+                  <a href='#' className='nav-link'>
+                    <i className="nav-icon fas" ><FaTools/></i>
+                      <p>
+                        Administrator Menu
+                        <i className="fas fa-angle-left right"/>
+                      </p>
+                  </a>
+                  <ul className="nav nav-treeview">
+                  <li className="nav-item">
+                    <Link to= '/dashboard/usermanagement' className='nav-link'>
+                    <i className="far nav-icon"><FaUsersCog/> </i>
+                    <p>
                     User Management
-                  </p>
-                  </Link>
-              </li>
-    
-              <li className="nav-item">
-              <Link to= '/dashboard/usermanagement' className='nav-link'>
-                  <i className="nav-icon far"><HiChat/> </i>
-                  <p>
-                    Feedback/Report
-                  </p>
-                </Link>
-              </li>
+                    </p>
+                    </Link>
+                  </li>
+                  </ul>
+                </li>
               </div>
             )}
         </ul>
       </nav>
     </div>
   </aside>
+  
+  
 </div>
   )
 }

@@ -24,6 +24,7 @@ const UserManagement = () => {
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [role, setRole] = useState("");
+    const roles = ['regular', 'admin', 'quality'];
     const [employee_title, setEmployeeTitle] = useState("");
     const [department, setDepartment] = useState("");
     const [division, setDivision] = useState("");
@@ -267,8 +268,20 @@ const UserManagement = () => {
               <tr>
               <th>Role</th>
               <td>
-              <input type="text" className="form-control" value={role} onChange={(event) => setRole(event.target.value)} placeholder="...." />
-                </td>
+                <select
+                    className="custom-select"
+                    name="example"
+                    placeholder='pilih'
+                    onChange={(event) => setRole(event.target.value)}
+                    style={{  }}
+                    >
+                    {roles.map((roleVal) => (
+                    <option value={roleVal}>
+                    {roleVal}
+                    </option>
+                    ))}
+                    </select>
+                    </td>
               </tr>
               <tr>
               <th>Password</th>
@@ -280,9 +293,9 @@ const UserManagement = () => {
             </table>
 
             <div className="card-header">
-              <h3 className="card-title">Details </h3>
+              <h3 className="card-title">Details</h3>
             </div>
-            <table class="table ">
+            <table class="table">
               <tr>
               <th>Employee Title</th>
               <td>{employee_title}</td>
@@ -302,9 +315,9 @@ const UserManagement = () => {
             </table>
 
             <div className="card-header">
-              <h3 className="card-title">Other Details </h3>
+              <h3 className="card-title">Other Details</h3>
             </div>
-            <table class="table ">
+            <table class="table">
               <tr>
               <th>Address</th>
               <td>{address}</td>

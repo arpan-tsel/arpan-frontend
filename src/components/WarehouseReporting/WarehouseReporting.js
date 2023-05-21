@@ -124,34 +124,33 @@ const getUsers = async () => {
 
   <section className="content">
     <div className="container-fluid">
-    <div className="row">
-    <div className="col-12">
-    <div className="card">
-    <div className="form-group row">
-    <label className="col-sm-10 col-form-label" style={{marginLeft:'1%'}}>
+      <div className="row">
+        <div className="col-12">
+          <div className="card">
+            <div className="form-group row">
+              <label className="col-sm-10 col-form-label" style={{marginLeft:'1%'}}>
+                <h5><strong>
+                  Akses Warehouse Reporting dengan menekan tombol di bawah ini
+                </strong>
+                </h5>
+              </label>
+    
+            </div>
+      <a href='https://bit.ly/DashboardReadinessAndInspection_view' target="_blank">
+      <button type="button" class="btn btn-danger" style={{width:'15%', marginLeft:'1%', alignItems:'center', marginBottom:'1%', marginTop:'-0.5%'}}>Warehouse Reporting</button>
+      </a>
+      
+      <div className="form-group row">
+        <label className="col-sm-10 col-form-label" style={{marginLeft:'1%'}}>
         <h5><strong>
-        Akses Warehouse Reporting dengan menekan tombol di bawah ini :
+        Akses Download Document dengan mengikuti langkahnya melalui tombol di bawah ini
         </strong>
         </h5>
         </label>
-    
-    </div>
-    <a href='https://bit.ly/DashboardReadinessAndInspection_view' target="_blank">
-    <button type="button" class="btn btn-danger" style={{width:'15%', marginLeft:'1%', alignItems:'center', marginBottom:'1%'}}>Warehouse Reporting</button>
-    </a>
-
-    <label className="col-sm-10 col-form-label" style={{marginLeft:'1%'}}>
-        <h5><strong>
-        Akses Download Document dengan ikuti langkahnya melalui tombol di bawah ini :
-        </strong>
-        </h5>
-        </label>
-    <br/>
-    <br/>
-    
-    
-    <button type="button" data-toggle="modal" data-target="#modal-message" class="btn btn-danger" style={{width:'15%', marginLeft:'1%', alignItems:'center', marginBottom:'1%', marginTop:'-2%'}}>Download Document</button>
-    <div class="modal fade" id="modal-message">
+      </div>
+      <br/>
+      <button type="button" data-toggle="modal" data-target="#modal-message" class="btn btn-danger" style={{width:'15%', marginLeft:'1%', alignItems:'center', marginBottom:'1%', marginTop:'-2%'}}>Download Document</button>
+      <div class="modal fade" id="modal-message">
                             <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-header">
@@ -182,7 +181,7 @@ const getUsers = async () => {
     <div>
     <label className="col-sm-10 col-form-label" style={{marginLeft:'1%'}}>
     <h5><strong>
-    Import/Update Data :
+    Import/Update Data
     </strong>
     </h5>
     </label>

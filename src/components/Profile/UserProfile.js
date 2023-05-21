@@ -114,7 +114,9 @@ const getUserById = async () => {
               </div>
               <h3 className="profile-username text-center">{name}</h3>
               <p className="text-muted text-center">{employee_title}</p>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-changePass" style={{marginLeft:'25%'}}>change password</button>
+              <div className="text-center">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-changePass">Change Password</button>
+              </div>
             </div>
           </div>
         </div>
@@ -164,7 +166,7 @@ const getUserById = async () => {
 
             <div className="card-headers p-2">
               <ul className="nav nav-card-profile">
-                <li className="nav-items"><a className="nav-link" href="#activity" data-toggle="tab">Profile</a></li>
+                <li><a className="nav-link" data-toggle="tab">Profile</a></li>
               </ul>
             </div>
             <div className="card-body">
@@ -175,7 +177,7 @@ const getUserById = async () => {
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">Employee Name</label>
                       <div className="col-sm-10">
-                      <p className="text-muted text-center">{name}</p>
+                      <p className="text-left form-control">{name}</p>
                       </div>
                     </div>
                     <div className="form-group row">

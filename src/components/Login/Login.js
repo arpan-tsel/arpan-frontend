@@ -38,7 +38,7 @@ const Login = () => {
                     <h1 className='login-title'>ARPAN</h1>
                     <p className="title">Welcome back</p>
                     <div className="separator"></div>
-                        <p className="welcome-message">Please, provide login credential to proceed and have access to all our services</p>
+                        <p className="welcome-message">Please provide login credentials to proceed and have access to all our services</p>
                         <p className="welcome-message">{msg}</p>
                             <form onSubmit={Auth} className="login-form">
                                 <div className="form-control-login">

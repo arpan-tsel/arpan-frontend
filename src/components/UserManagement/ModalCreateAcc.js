@@ -56,20 +56,18 @@ const ModalCreateAcc = () => {
                 <td>
                 <select
                     className="custom-select"
-                                            name="example"
-                                                placeholder='pilih'
-                                                onChange={(event) => setRole(event.target.value)}
-                                                style={{  }}
-                                            >
-                                                {roles.map((roleVal) => (
-                                                    <option value={roleVal}
-                                                    >
-                                                        {roleVal}
-                                                    </option>
-                                                ))}
-                                                
-                                            </select>
-                                            </td>
+                    name="example"
+                    placeholder='pilih'
+                    onChange={(event) => setRole(event.target.value)}
+                    style={{  }}
+                    >
+                    {roles.map((roleVal) => (
+                    <option value={roleVal}>
+                    {roleVal}
+                    </option>
+                    ))}
+                    </select>
+                    </td>
               </tr>
               <tr>
               <th>Password</th>

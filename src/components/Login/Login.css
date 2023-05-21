@@ -28,9 +28,9 @@ section.side {
 
 .telkomsel-login{
     position:absolute;
-  top:0;
-  right:0;
-  color: #c90416;
+    top:5px;
+    right:10px;
+    color: #c90416;
     font-family: Telkomsel-Batik-Bold;
     font-size: 1.5em;
 }
