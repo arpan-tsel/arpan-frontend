@@ -96,14 +96,16 @@ const Dashboard = () => {
             data: datas[1],
             fill: false, 
             backgroundColor: '#f56954',
-            borderColor: '#f56954' 
+            borderColor: '#f56954',
+            tension: 0.3 
           },
           {
             label: labelis[0],
             data: datas[0],
             fill: false, 
             backgroundColor: '#00a65a',
-            borderColor: '#00a65a'
+            borderColor: '#00a65a',
+            tension: 0.3
           }
         ],
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
@@ -185,7 +187,7 @@ const Dashboard = () => {
           <div className="small-box bg-danger">
             <div className="inner">
               <h3>{rfs}</h3>
-              <p>RFS</p>
+              <h2>RFS</h2>
             </div>
             <div className="icon">
               <i className="ion"><SiReadthedocs/> </i>
@@ -196,7 +198,7 @@ const Dashboard = () => {
           <div className="small-box bg-danger">
             <div className="inner">
               <h3>{rfi}</h3>
-              <p>RFI</p>
+              <h2>RFI</h2>
             </div>
             <div className="icon">
               <i className="ion ion-stats-bars" />
@@ -207,7 +209,7 @@ const Dashboard = () => {
           <div className="small-box bg-danger">
             <div className="inner">
               <h3>{rfc}</h3>
-              <p>RFC</p>
+              <h2>RFC</h2>
             </div>
             <div className="icon">
               <i className="ion"><FaShareAlt/> </i>
@@ -218,7 +220,7 @@ const Dashboard = () => {
           <div className="small-box bg-danger">
             <div className="inner">
               <h3>{itr}</h3>
-              <p>ITR</p>
+              <h2>ITR</h2>
             </div>
             <div className="icon">
               <i className="ion"><FaBalanceScale/></i>

@@ -177,9 +177,9 @@ const getUsers = async () => {
 
         {/* upload file */}
 
-  {users && (users.role === "quality" || users.role === "admin") && (
+    {users && (users.role === "quality" || users.role === "admin") && (
     <div>
-    <label className="col-sm-10 col-form-label" style={{marginLeft:'1%'}}>
+    <label className="col-sm-10 col-form-label" style={{marginLeft:'0.5%'}}>
     <h5><strong>
     Import/Update Data
     </strong>
@@ -187,17 +187,19 @@ const getUsers = async () => {
     </label>
 
       <form onSubmit={handleSubmit} className='updatedata' style={{backgroundColor:'white'}} encType="multipart/form">
-      <input style={{ width:'30%', backgroundColor:'white'}}
-                    type="file" 
-                    name="file" 
-                    id="file" 
-                    placeholder="Upload your file" 
-                    onChange={handleChange}
-                />
-                <br></br>
-                 <button className="btn btn-danger" style={{marginLeft:'4.5%', width:'7%', marginBottom:'1%'}} type="submit" >Update</button>
-                 {/* <p>{message}</p> */}
+      <button className="btn btn-danger" style={{marginLeft:'1%', width:'15%', marginBottom:'1%', marginTop:'1%'}} type="submit" >Update</button>
+        
+      <input  
+        style={{ width:'50%', backgroundColor:'white'}}
+        type="file" 
+        name="file" 
+        id="file" 
+        onChange={handleChange}
+      />
+        
+        {/* <p>{message}</p> */}
       </form>
+
     </div>
   )}
         

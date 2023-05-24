@@ -297,7 +297,7 @@ const UserManagement = () => {
             </div>
             <table class="table">
               <tr>
-              <th>Employee Title</th>
+              <th id="th1">Employee Title</th>
               <td>{employee_title}</td>
               </tr>
               <tr>
@@ -319,7 +319,7 @@ const UserManagement = () => {
             </div>
             <table class="table">
               <tr>
-              <th>Address</th>
+              <th id="th1">Address</th>
               <td>{address}</td>
               </tr>
               <tr>
@@ -331,7 +331,7 @@ const UserManagement = () => {
 
             <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onClick={updateUserAccount} data-dismiss="modal">Save changes</button>
+        <button type="button" class="btn btn-danger" onClick={updateUserAccount} data-dismiss="modal">Save changes</button>
         </div>
         </div>
         </div>
@@ -358,7 +358,7 @@ const UserManagement = () => {
             </div>
             <table class="table ">
               <tr>
-              <th>Name</th>
+              <th id="th1">Name</th>
               <td>{name}</td>
               </tr>
               <tr>
@@ -374,7 +374,7 @@ const UserManagement = () => {
             
             <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" onClick={deleteUserAccount} data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-danger" onClick={deleteUserAccount} data-dismiss="modal">Delete</button>
         </div>
         </div>
         </div>

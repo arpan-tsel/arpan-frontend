@@ -21,6 +21,9 @@ function PieChart({ chartDataPie }) {
           display: true,
           color: "white",
           align: "end",
+          font:{
+            size: 15
+          },
           padding: {
             right: 2
           },
@@ -28,7 +31,7 @@ function PieChart({ chartDataPie }) {
             padding: { top: 10 },
             title: {
               font: {
-                weight: "bold"
+                weight: "normal"
               }
             }
           },

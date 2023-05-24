@@ -1,5 +1,3 @@
-
-
 .project-header{
   top:0;
   position: sticky;
@@ -7,6 +5,9 @@
   color:white;
 }
 
+#th1 {
+  width: 35%;
+}
 
 
 .table-container{

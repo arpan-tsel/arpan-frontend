@@ -323,10 +323,11 @@ function Project() {
 
           <div className="card-header">
               <h3 className="card-title">PIC Tester</h3>
-            </div>
-            <table class="table ">
+          </div>
+          
+            <table class="table">
               <tr>
-              <th>PIC Tester 1</th>
+              <th id="th1">PIC Tester 1</th>
               <td>{pic_tester_1}</td>
               </tr>
               <tr>
@@ -350,9 +351,9 @@ function Project() {
             <div className="card-header">
               <h3 className="card-title">Other Details</h3>
             </div>
-            <table class="table table-striped">
+            <table class="table">
               <tr>
-              <th>Jumlah Test Case</th>
+              <th id="th1">Jumlah Test Case</th>
               <td>{testcase_amt}</td>
               </tr>
               <tr>
@@ -378,7 +379,7 @@ function Project() {
             </table>
             <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onClick={updateData} data-dismiss="modal">Save changes</button>
+        <button type="button" class="btn btn-danger" onClick={updateData} data-dismiss="modal">Save changes</button>
         </div>
         </div>
         </div>

@@ -22,7 +22,8 @@ const ModalPeriod1 = ({smonth, syear, req, tgl_signoff1, req_name1, req_title1, 
                 </div>
                 <hr style={{border:"3px solid black"}}></hr>
                     <p>Berita Acara ini dibuat untuk menerangkan bahwa secara resmi periode 
-                            bulan {smonth} tahun {syear}, Departemen {req} telah melakukan ,       
+                            bulan {smonth} tahun {syear}, Departemen {req} telah melakukan proses perubahan 
+                            baik penambahan maupun penutupan parameter pada aplikasi Digital Core (Digicore),       
                     </p>
 
                     <p> Adapun dasar dari perubahan tersebut, dapat dilihat dalam lampiran. Demikian Berita Acara 
@@ -57,7 +58,8 @@ const ModalPeriod1 = ({smonth, syear, req, tgl_signoff1, req_name1, req_title1, 
                 </div>
                 <hr style={{border:"3px solid black"}}></hr>
                 <h3>Berita Acara ini dibuat untuk menerangkan bahwa secara resmi periode 
-                        bulan {smonth} tahun {syear}, Departemen {req} telah melakukan ,
+                        bulan {smonth} tahun {syear}, Departemen {req} telah melakukan proses perubahan 
+                        baik penambahan maupun penutupan parameter pada aplikasi Digital Core (Digicore),       
                 </h3>
 
                 <br/>

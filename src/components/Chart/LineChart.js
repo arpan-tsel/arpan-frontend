@@ -27,7 +27,7 @@ function LineChart({ chartData }) {
       weight: "bold",
       color: "#00325c",
       font: {
-        size: 13
+        size: 14
       },
       align: "start"
     },
