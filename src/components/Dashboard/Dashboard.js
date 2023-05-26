@@ -187,7 +187,7 @@ const Dashboard = () => {
           <div className="small-box bg-danger">
             <div className="inner">
               <h3>{rfs}</h3>
-              <h2>RFS</h2>
+              <h2>RFS <a id="ytd">(YTD)</a></h2>
             </div>
             <div className="icon">
               <i className="ion"><SiReadthedocs/> </i>
@@ -198,7 +198,7 @@ const Dashboard = () => {
           <div className="small-box bg-danger">
             <div className="inner">
               <h3>{rfi}</h3>
-              <h2>RFI</h2>
+              <h2>RFI <a id="ytd">(YTD)</a></h2>
             </div>
             <div className="icon">
               <i className="ion ion-stats-bars" />
@@ -209,7 +209,7 @@ const Dashboard = () => {
           <div className="small-box bg-danger">
             <div className="inner">
               <h3>{rfc}</h3>
-              <h2>RFC</h2>
+              <h2>RFC <a id="ytd">(YTD)</a></h2>
             </div>
             <div className="icon">
               <i className="ion"><FaShareAlt/> </i>
@@ -220,7 +220,7 @@ const Dashboard = () => {
           <div className="small-box bg-danger">
             <div className="inner">
               <h3>{itr}</h3>
-              <h2>ITR</h2>
+              <h2>ITR <a id="ytd">(YTD)</a></h2>
             </div>
             <div className="icon">
               <i className="ion"><FaBalanceScale/></i>

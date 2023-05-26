@@ -80,7 +80,7 @@ const ModalCreateAcc = () => {
 
         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-danger" >Create Account</button>
+                            <button type="submit" class="btn btn-danger">Create Account</button>
         </div>
         </form>
     </div>

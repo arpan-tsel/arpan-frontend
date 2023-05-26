@@ -153,7 +153,7 @@ const getUserById = async () => {
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="submit" className="btn btn-danger">Submit</button>
                     </div>
-                  </form>
+      </form>
 
             
         </div>
@@ -222,7 +222,7 @@ const getUserById = async () => {
                       <div className="offset-sm-2 col-sm-10">
                         <button type="submit" className="btn btn-danger">Save Changes</button>
                       </div>
-                    </div>
+                    </div> 
                   </form>
                 </div>
               </div>

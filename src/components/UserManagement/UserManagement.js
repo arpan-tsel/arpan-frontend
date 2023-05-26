@@ -248,7 +248,7 @@ const UserManagement = () => {
         </div>
         <div class="modal-body">
         <div className='modalOptionsContainer'>
-
+        <form className="form-horizontal" onSubmit={updateUserAccount}>
           <div className="card-header">
               <h3 className="card-title">User Account</h3>
             </div>
@@ -297,7 +297,7 @@ const UserManagement = () => {
             </div>
             <table class="table">
               <tr>
-              <th id="th1">Employee Title</th>
+              <th id="th1">Employee Title</th> 
               <td>{employee_title}</td>
               </tr>
               <tr>
@@ -331,8 +331,10 @@ const UserManagement = () => {
 
             <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger" onClick={updateUserAccount} data-dismiss="modal">Save changes</button>
+        <button type="submit" class="btn btn-danger">Save changes</button>
         </div>
+        </form>
+          
         </div>
         </div>
         </div>

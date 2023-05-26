@@ -139,6 +139,7 @@ function Project() {
         } catch (error) {
           console.log(error);
         }
+        window.location.reload();
       };
 
       //get project data selected and displayed to user
