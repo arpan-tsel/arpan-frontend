@@ -11,50 +11,49 @@ function LineChart({ chartData }) {
   console.log(chartData, "linechart")
   return (
     <div className="Line-chart">
-  <Line 
-  data={chartData} 
-  options={{
-  plugins: {
-    legend: {
-      display: true
-    },
-    title: {
-      display: true,
-      text: "RFC + ITR",
-      padding: {
-        bottom: 30
-      },
-      weight: "bold",
-      color: "#00325c",
-      font: {
-        size: 14
-      },
-      align: "start"
-    },
-    datalabels: {
-      display: true,
-      color: "black",
-      align: "end",
-      padding: {
-        right: 2
-      },
-      labels: {
-        padding: { top: 10 },
-        title: {
-          font: {
-            weight: "bold"
+      <Line 
+        data={chartData} 
+        options={{
+          plugins: {
+            legend: {
+              display: true
+            },
+            title: {
+              display: true,
+              text: "RFC + ITR",
+              padding: {
+                bottom: 30
+              },
+              weight: "bold",
+              color: "#00325c",
+              font: {
+                size: 14
+              },
+              align: "start"
+            },
+            datalabels: {
+              display: true,
+              color: "black",
+              align: "end",
+              padding: {
+                right: 2
+              },
+              labels: {
+                padding: { top: 10 },
+                title: {
+                  font: {
+                    weight: "bold"
+                  }
+                }
+              },
+              formatter: function (value) {
+                return "\n" + value;
+              }
+            }
           }
-        }
-      },
-      formatter: function (value) {
-        return "\n" + value;
-      }
-    }
-  }
-}
-  }
-  />
-  </div>
+        }}
+      />
+    </div>
   );
 }
 

@@ -21,14 +21,14 @@ const ModalPeriod1 = ({smonth, syear, req, tgl_signoff1, req_name1, req_title1, 
                     <h5><strong>PERIODE {smonth} {syear}</strong></h5>
                 </div>
                 <hr style={{border:"3px solid black"}}></hr>
-                    <p>Berita Acara ini dibuat untuk menerangkan bahwa secara resmi periode 
-                            bulan {smonth} tahun {syear}, Departemen {req} telah melakukan proses perubahan 
-                            baik penambahan maupun penutupan parameter pada aplikasi Digital Core (Digicore),       
-                    </p>
+                <p>Berita Acara ini dibuat untuk menerangkan bahwa secara resmi periode 
+                    bulan {smonth} tahun {syear}, Departemen {req} telah melakukan proses perubahan 
+                    baik penambahan maupun penutupan parameter pada aplikasi Digital Core (Digicore),       
+                </p>
 
-                    <p> Adapun dasar dari perubahan tersebut, dapat dilihat dalam lampiran. Demikian Berita Acara 
-                        ini dibuat untuk dipergunakan sebagaimana mestinya.
-                    </p>
+                <p>Adapun dasar dari perubahan tersebut, dapat dilihat dalam lampiran. Demikian Berita Acara 
+                    ini dibuat untuk dipergunakan sebagaimana mestinya.
+                </p>
 
                 <br/><br/><br/>
                 <div style={{textAlign:'center'}}>
@@ -46,8 +46,6 @@ const ModalPeriod1 = ({smonth, syear, req, tgl_signoff1, req_name1, req_title1, 
                     </div>
                 </div> 
             </div> 
-
-        
         </div>
         {/* content */}
         <div style={{display:"none"}}>
@@ -69,27 +67,26 @@ const ModalPeriod1 = ({smonth, syear, req, tgl_signoff1, req_name1, req_title1, 
                 </h3>
 
                 <br/><br/><br/>
-            <div style={{textAlign:'center'}}>
-                <h3>Jakarta, {tgl_signoff1}</h3>
-                <h3>Mengetahui dan Menyetujui,</h3>
-            </div>
-            <div class="row">
-                <div class="column">
+                <div style={{textAlign:'center'}}>
+                    <h3>Jakarta, {tgl_signoff1}</h3>
+                    <h3>Mengetahui dan Menyetujui,</h3>
+                </div>
+                <div class="row">
+                    <div class="column">
                         <p style={{paddingTop:"40%", textDecoration: "underline", textAlign:'center'}}><strong>{req_name1}</strong></p>
                         <p style={{textAlign:'center'}}>{req_title1}</p>
-                </div>
-                <div class="column">
+                    </div>
+                    <div class="column">
                         <p style={{paddingTop:"40%", textDecoration: "underline", textAlign:'center'}}><strong>{revas_name1}</strong></p>
                         <p style={{textAlign:'center'}}>{revas_title1}</p>
-                </div>
-            </div> 
-                
+                    </div>
+                </div> 
             </div>
         </div>
         
         <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger" onClick={handlePrintPDF}>Download PDF</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" onClick={handlePrintPDF}>Download PDF</button>
         </div>
         
     </>

@@ -8,51 +8,52 @@ Chart.register(ChartDataLabels);
 function PiechartPrepaid({ chartDataPie }) {
   return (
     <div className="pie-chart" style={{height:'50%', width:'50%'}}>
-  <Pie
-   data={chartDataPie} 
-  options={
-    {
-      plugins: {
-        datalabels: {
-          display: true,
-          color: "white",
-          align: "end",
-          padding: {
-            right: 2
-          },
-          labels: {
-            padding: { top: 10 },
-            title: {
-              font: {
-                weight: "bold"
+      <Pie
+        data={chartDataPie} 
+        options={{
+          plugins: {
+            datalabels: {
+              display: true,
+              color: "white",
+              align: "end",
+              font:{
+                size: 15
+              },
+              padding: {
+                right: 2
+              },
+              labels: {
+                padding: { top: 10 },
+                title: {
+                  font: {
+                    weight: "normal"
+                  }
+                }
+              },
+              formatter: (value, context) =>{
+                // console.log('tes', value);
+                if(value>0){console.log(context.chart.data.datasets[0].data);
+                const datapoints = context.chart.data.datasets[0].data;
+                function totalSum(total, datapoint){
+                  return total + datapoint;
+                }
+                const totalValue = datapoints.reduce(totalSum, 0);
+                const percentageValue = (value / totalValue * 100).toFixed(1);
+                const display = [`${value}`, `${percentageValue}%`]
+                return display;}
+                else{
+                  value = null
+                }
               }
-            }
-          },
-          formatter: (value, context) =>{
-            // console.log('tes', value);
-            if(value>0){console.log(context.chart.data.datasets[0].data);
-            const datapoints = context.chart.data.datasets[0].data;
-            function totalSum(total, datapoint){
-              return total + datapoint;
-            }
-            const totalValue = datapoints.reduce(totalSum, 0);
-            const percentageValue = (value / totalValue * 100).toFixed(1);
-            const display = [`${value}`, `${percentageValue}%`]
-            return display;}
-            else{
-              value = null
-              
+            },
+            tooltip: {
+              enabled: false
             }
           }
-        },
-        tooltip: {
-          enabled: false
-        }
-      }
-  }}
-  />
-  <br/>
-  </div>
+        }}
+      />
+      <br/>
+    </div>
   )
 }
 

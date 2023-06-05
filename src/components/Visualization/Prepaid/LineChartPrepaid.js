@@ -8,50 +8,49 @@ Chart.register(ChartDataLabels);
 const LineChartPrepaid = ({chartDataLine}) => {
   return (
     <div className="Line-chart">
-  <Line 
-  data={chartDataLine} 
-  options={{
-  plugins: {
-    legend: {
-      display: true
-    },
-    title: {
-      display: true,
-      text: "RFS + RFI",
-      padding: {
-        bottom: 30
-      },
-      weight: "bold",
-      color: "#00325c",
-      font: {
-        size: 13
-      },
-      align: "start"
-    },
-    datalabels: {
-      display: true,
-      color: "black",
-      align: "end",
-      padding: {
-        right: 2
-      },
-      labels: {
-        padding: { top: 10 },
-        title: {
-          font: {
-            weight: "bold"
+      <Line 
+        data={chartDataLine} 
+        options={{
+          plugins: {
+            legend: {
+              display: true
+            },
+            title: {
+              display: true,
+              text: "RFS + RFI",
+              padding: {
+                bottom: 30
+              },
+              weight: "bold",
+              color: "#00325c",
+              font: {
+                size: 13
+              },
+              align: "start"
+            },
+            datalabels: {
+              display: true,
+              color: "black",
+              align: "end",
+              padding: {
+                right: 2
+              },
+              labels: {
+                padding: { top: 10 },
+                title: {
+                  font: {
+                    weight: "bold"
+                  }
+                }
+              },
+              formatter: function (value) {
+                return "\n" + value;
+              }
+            }
           }
-        }
-      },
-      formatter: function (value) {
-        return "\n" + value;
-      }
-    }
-  }
-}
-  }
-  />
-  </div>
+        }}
+      />
+    </div>
   )
 }
 

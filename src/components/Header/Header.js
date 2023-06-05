@@ -68,39 +68,39 @@ const Header = () => {
 
 
   return (
-   <div>
-  <nav className="main-header navbar navbar-expand navbar-white navbar-light">
-    <ul className="navbar-nav">
-      <li className="nav-item">
-        <a className="nav-link" data-widget="pushmenu" href="#" role="button"><i className="fas fa-bars" /></a>
-      </li>
-      <li className="nav-item d-none d-sm-inline-block">
-        <a href="/dashboard" className="nav-link">Home</a>
-      </li>
-      <li className="nav-item d-none d-sm-inline-block">
-      </li>
-    </ul>
-    <ul className="navbar-nav ml-auto">
+    <div>
+      <nav className="main-header navbar navbar-expand navbar-white navbar-light">
 
-        <li className='nav-item'>
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link" data-widget="pushmenu" href="#" role="button"><i className="fas fa-bars" /></a>
+          </li>
+          <li className="nav-item d-none d-sm-inline-block">
+            <a href="/dashboard" className="nav-link">Home</a>
+          </li>
+          <li className="nav-item d-none d-sm-inline-block"></li>
+        </ul>
+
+        <ul className="navbar-nav ml-auto">
+          <li className='nav-item'>
             <a className="nav-link" data-widget="fullscreen" href="#" role="button">
-            <p>Hi, {users.name}</p> 
+              <p>Hi, {users.name}</p> 
             </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i className="fas fa-expand-arrows-alt" />
-        </a>
-      </li>
-      <li className="nav-item">
-        <button onClick={Logout} className="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-        <i className="fas"><FiLogOut/> </i>
-        </button>
-      </li>
-    </ul>
-  </nav>
-</div>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" data-widget="fullscreen" href="#" role="button">
+              <i className="fas fa-expand-arrows-alt" />
+            </a>
+          </li>
+          <li className="nav-item">
+            <button onClick={Logout} className="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+              <i className="fas"><FiLogOut/> </i>
+            </button>
+          </li>
+        </ul>
 
+      </nav>
+    </div>
   )
 }
 

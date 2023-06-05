@@ -26,35 +26,35 @@ const Login = () => {
         }
     }
 
-  return (
-    <div className='login-body-container'>
-        <section class="side">
-            <img src={loginPic} className="image-auth" alt=""/>
-        </section>
+    return (
+        <div className='login-body-container'>
+            <section class="side">
+                <img src={loginPic} className="image-auth" alt=""/>
+            </section>
 
-        <section className="main">
-            <p className='telkomsel-login'>Telkomsel</p>
+            <section className="main">
+                <p className='telkomsel-login'>Telkomsel</p>
                 <div className="login-container">
                     <h1 className='login-title'>ARPAN</h1>
                     <p className="title">Welcome back</p>
                     <div className="separator"></div>
-                        <p className="welcome-message">Please provide login credentials to proceed and have access to all our services</p>
-                        <p className="welcome-message">{msg}</p>
-                            <form onSubmit={Auth} className="login-form">
-                                <div className="form-control-login">
-                                    <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                                    <i className="fa-user-login"><FaUserAlt/></i>
-                                </div>
-                                <div class="form-control-login">
-                                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                                    <i className="fa-lock-login"><FaLock/></i>
-                                </div>
-                                <button className="submit">Login</button>
-                            </form>
+                    <p className="welcome-message">Please provide login credentials to proceed and have access to all our services</p>
+                    <p className="welcome-message">{msg}</p>
+                    <form onSubmit={Auth} className="login-form">
+                        <div className="form-control-login">
+                            <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                            <i className="fa-user-login"><FaUserAlt/></i>
+                        </div>
+                        <div class="form-control-login">
+                            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                            <i className="fa-lock-login"><FaLock/></i>
+                        </div>
+                        <button className="submit">Login</button>
+                    </form>
                 </div>
-        </section>
-    </div>
-  )
+            </section>
+        </div>
+    )
 }
 
 export default Login

@@ -97,7 +97,6 @@ const Dashboard = () => {
             fill: false, 
             backgroundColor: '#f56954',
             borderColor: '#f56954',
-            tension: 0.3 
           },
           {
             label: labelis[0],
@@ -105,7 +104,6 @@ const Dashboard = () => {
             fill: false, 
             backgroundColor: '#00a65a',
             borderColor: '#00a65a',
-            tension: 0.3
           }
         ],
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
@@ -116,7 +114,7 @@ const Dashboard = () => {
       })
     }
 
-    //pie chart
+  //pie chart
   const fetchData = () =>  {
     axios.get(`piechartdashboard`).then(res => {
       const resp = res.data;
@@ -127,18 +125,15 @@ const Dashboard = () => {
       for(var i of resp) {
           datas.push(i.value)
       }
-      setData(
-        {
-          datasets: [{
-              data:datas,
-              backgroundColor:[
-                '#f56954', '#00a65a', '#f39c12', '#00c0ef'
-              ]
-          },
-        ],
+      setData({
+        datasets: [{
+          data:datas,
+          backgroundColor:[
+            '#f56954', '#00a65a', '#f39c12', '#00c0ef'
+          ]
+        },],
         labels:['Prepaid', 'Digital & VAS', 'BuASI', 'POINTER'], 
-      }
-      )
+      })
       setChartDataPie(data)
       console.log(data)
 
@@ -165,94 +160,91 @@ const Dashboard = () => {
       <Header/>
       <Sidebar/>
       <div className="content-wrapper">
-  <div className="content-header">
-    <div className="container-fluid">
-      <div className="row mb-2">
-        <div className="col-sm-6">
-          <h1 className="m-0">Dashboard</h1>
+        <div className="content-header">
+          <div className="container-fluid">
+            <div className="row mb-2">
+              <div className="col-sm-6">
+                <h1 className="m-0">Dashboard</h1>
+              </div>
+              <div className="col-sm-6">
+                <ol className="breadcrumb float-sm-right">
+                  <li className="breadcrumb-item"><a href="#">Home</a></li>
+                </ol>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="col-sm-6">
-          <ol className="breadcrumb float-sm-right">
-            <li className="breadcrumb-item"><a href="#">Home</a></li>
-          </ol>
-        </div>
+        <section className="content">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-lg-3 col-6">
+                <div className="small-box bg-danger">
+                  <div className="inner">
+                    <h3>{rfs}</h3>
+                    <h2>RFS <a id="ytd">(YTD)</a></h2>
+                  </div>
+                  <div className="icon">
+                    <i className="ion"><SiReadthedocs/> </i>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3 col-6">
+                <div className="small-box bg-danger">
+                  <div className="inner">
+                    <h3>{rfi}</h3>
+                    <h2>RFI <a id="ytd">(YTD)</a></h2>
+                  </div>
+                  <div className="icon">
+                    <i className="ion ion-stats-bars" />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3 col-6">
+                <div className="small-box bg-danger">
+                  <div className="inner">
+                    <h3>{rfc}</h3>
+                    <h2>RFC <a id="ytd">(YTD)</a></h2>
+                  </div>
+                  <div className="icon">
+                    <i className="ion"><FaShareAlt/> </i>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3 col-6">
+                <div className="small-box bg-danger">
+                  <div className="inner">
+                    <h3>{itr}</h3>
+                    <h2>ITR <a id="ytd">(YTD)</a></h2>
+                  </div>
+                  <div className="icon">
+                    <i className="ion"><FaBalanceScale/></i>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="card card-danger">
+                  <div className="card-header">
+                    <h3 className="card-title">Request Statistics per Division (Current Year)</h3>
+                  </div>
+                  <div className="card-body-table">
+                    <PieChart chartDataPie ={data}/>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="card card-danger">
+                  <div className="card-header">
+                    <h3 className="card-title">All Requests YoY</h3>
+                  </div>
+                  <div className="card-body">
+                    <LineChart chartData={linedata}/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-      
-    </div>
-  </div>
-  <section className="content">
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-lg-3 col-6">
-          <div className="small-box bg-danger">
-            <div className="inner">
-              <h3>{rfs}</h3>
-              <h2>RFS <a id="ytd">(YTD)</a></h2>
-            </div>
-            <div className="icon">
-              <i className="ion"><SiReadthedocs/> </i>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-3 col-6">
-          <div className="small-box bg-danger">
-            <div className="inner">
-              <h3>{rfi}</h3>
-              <h2>RFI <a id="ytd">(YTD)</a></h2>
-            </div>
-            <div className="icon">
-              <i className="ion ion-stats-bars" />
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-3 col-6">
-          <div className="small-box bg-danger">
-            <div className="inner">
-              <h3>{rfc}</h3>
-              <h2>RFC <a id="ytd">(YTD)</a></h2>
-            </div>
-            <div className="icon">
-              <i className="ion"><FaShareAlt/> </i>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-3 col-6">
-          <div className="small-box bg-danger">
-            <div className="inner">
-              <h3>{itr}</h3>
-              <h2>ITR <a id="ytd">(YTD)</a></h2>
-            </div>
-            <div className="icon">
-              <i className="ion"><FaBalanceScale/></i>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6">
-        <div className="card card-danger">
-          <div className="card-header">
-            <h3 className="card-title">Request Statistics per Division</h3>
-
-          </div>
-          <div className="card-body-table">
-              <PieChart chartDataPie ={data}/>
-          </div>
-        </div>
-        
-        </div>
-        <div className="col-md-6">
-        <div className="card card-danger">
-        <div className="card-header">
-          <h3 className="card-title">All Requests YoY</h3>
-        </div>
-        <div className="card-body">
-              <LineChart chartData={linedata}/>
-        </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
-    </div>
     </div>
   )
 }

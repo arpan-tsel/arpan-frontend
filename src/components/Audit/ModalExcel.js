@@ -57,22 +57,22 @@ const ModalExcel = ({requestor_audit, smonth, syear, smonth2, syear2, smonth3, s
   return (
     <div className='modalOptionsContainer '>
       <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-danger" onClick={dataProjectHandler}>Download XLSX</button>
-                            </div>
-    <table class="table table-bordered table-hover">
-    <thead>
-    <tr className='row-table'>
-                      <th className='project-header'>No</th>
-                      <th className='project-header'>Nodin Number</th>
-                      <th className='project-header'>Nodin Title</th>
-                      <th className='project-header'>Date</th>
-                      <th className='project-header'>No Nodin RFS/RFI</th>
-                      <th className='project-header'>No Nodin RFC/ITR</th>
-                      <th className='project-header'>Select</th>
-                  </tr>
-    </thead>
-    <tbody>
-        {requestor_audit.map((audit, index)=>(
+        <button type="button" class="btn btn-danger" onClick={dataProjectHandler}>Download XLSX</button>
+      </div>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr className='row-table'>
+            <th className='project-header'>No</th>
+            <th className='project-header'>Nodin Number</th>
+            <th className='project-header'>Nodin Title</th>
+            <th className='project-header'>Date</th>
+            <th className='project-header'>No Nodin RFS/RFI</th>
+            <th className='project-header'>No Nodin RFC/ITR</th>
+            <th className='project-header'>Select</th>
+          </tr>
+        </thead>
+        <tbody>
+          {requestor_audit.map((audit, index)=>(
             <tr key={audit.id_project}>
             <td>{index + 1}</td>
             <td>{audit.no_nodin_bo}</td>
@@ -99,12 +99,12 @@ const ModalExcel = ({requestor_audit, smonth, syear, smonth2, syear2, smonth3, s
                   handleSelection(audit.id_project,audit.selection);
                 }
               }
-              /></td>
+            /></td>
           </tr>
-        ))}
-    </tbody>
-    </table> 
-</div>
+          ))}
+        </tbody>
+      </table> 
+    </div>
   )
 }
 
