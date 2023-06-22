@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
 import { useNavigate, Link } from 'react-router-dom';
-import {FaCubes, FaUserAlt, FaTools, FaUsersCog} from 'react-icons/fa'
+import {FaCubes, FaUserAlt, FaTools, FaUsersCog, FaBuilding} from 'react-icons/fa'
 import {HiClipboardList, HiChat} from 'react-icons/hi'
 import {BsListCheck} from 'react-icons/bs'
 import {AiOutlineLineChart} from 'react-icons/ai'
@@ -167,6 +167,16 @@ const Sidebar = () => {
                           <i className="far nav-icon"><FaUsersCog/> </i>
                           <p>
                             User Management
+                          </p>
+                        </Link>
+                      </li>
+                    </ul>
+                    <ul className="nav nav-treeview">
+                      <li className="nav-item">
+                        <Link to= '/dashboard/usermanagement' className='nav-link'>
+                          <i className="far nav-icon"><FaBuilding/> </i>
+                          <p>
+                            Div & Dept Management
                           </p>
                         </Link>
                       </li>

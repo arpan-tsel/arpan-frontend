@@ -21,7 +21,7 @@ function PieChart({ chartDataPie }) {
               color: "white",
               align: "end",
               font:{
-                size: 15
+                size: 10
               },
               padding: {
                 right: 2

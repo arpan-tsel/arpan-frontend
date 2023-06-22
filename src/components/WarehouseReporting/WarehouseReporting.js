@@ -14,6 +14,8 @@ const WarehouseReporting = () => {
   const [token, setToken] = useState('');
   const [expire, setExpire] = useState('');
   const navigate = useNavigate();
+  const [uploaded, setUploaded] = useState(null);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   useEffect(() => {
     refreshToken();
@@ -80,16 +82,24 @@ const refreshPageError = (error)=>{
 
 const handleSubmit = async (event) =>{
   event.preventDefault()
+  setButtonDisabled(true);
   const formData = new FormData();
+
   formData.append('file', file);
   formData.append('fileName', file.name);
+
   const config = {
     headers: {
       'content-type': 'multipart/form-data',
     },
   };
+
   try{
-    const res = await axios.post(`uploadproject`, formData, config)
+    const res = await axios.post(`uploadproject`, formData, {
+      onUploadProgress: (Data) => {
+        setUploaded(Math.round((Data.loaded / Data.total) * 100));
+      },
+    })
     console.log("response data", res.data.message); 
     console.log("form data", formData);
     setMessage(res.data.message)
@@ -98,6 +108,7 @@ const handleSubmit = async (event) =>{
       refreshPageError(error);
       console.log(error)
     }
+  setButtonDisabled(false);
 }
 
   return (
@@ -179,7 +190,7 @@ const handleSubmit = async (event) =>{
                         </h5>
                       </label>
                       <form onSubmit={handleSubmit} className='updatedata' style={{backgroundColor:'white'}} encType="multipart/form">
-                        <button className="btn btn-danger" style={{marginLeft:'1%', width:'15%', marginBottom:'1%', marginTop:'1%'}} type="submit" >Update</button>
+                        <button disabled={buttonDisabled} className="btn btn-danger" style={{marginLeft:'1%', width:'15%', marginBottom:'1%', marginTop:'1%'}} type="submit" >Update</button>
                         <input  
                           style={{ width:'50%', backgroundColor:'white'}}
                           type="file" 
@@ -187,7 +198,21 @@ const handleSubmit = async (event) =>{
                           id="file" 
                           onChange={handleChange}
                         />
-                        {/* <p>{message}</p> */}
+
+                        {uploaded && (
+                          <div className="progress mt-1">
+                            <div
+                              className="progress-bar"
+                              role="progressbar"
+                              aria-valuenow="Uploading"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style={{ width: `${uploaded}%` }}
+                            >
+                              {`Uploading File...`}
+                            </div>
+                          </div>
+                        )}
                       </form>
                     </div>
                   )}

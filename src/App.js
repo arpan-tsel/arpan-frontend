@@ -30,6 +30,7 @@ function App() {
         <Route path='/dashboard/warehouse' exact element={<WarehouseReporting/>}/>
         <Route path='/dashboard/usermanagement' exact element={<UserManagement/>}/>
         
+        
       </>
     </Routes>
   );

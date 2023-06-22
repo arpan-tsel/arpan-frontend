@@ -19,6 +19,7 @@ const Login = () => {
                 password: password
             });
             navigate("/dashboard");
+            window.location.reload();
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
