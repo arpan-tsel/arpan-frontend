@@ -1,0 +1,26 @@
+.divdeptmanagement-header{
+    top:0;
+    position: sticky;
+    background-color: #6c757d;
+    color:white; 
+}
+
+.divdeptmanagementno-header{
+    top:0;
+    position: sticky;
+    background-color: #6c757d;
+    color:white; 
+    width: 60px;
+}
+
+.divdeptmanagementdel-header{
+    top:0;
+    position: sticky;
+    background-color: #6c757d;
+    color:white; 
+    width: 175px;
+}
+
+#th1 {
+    width: 35%;
+}

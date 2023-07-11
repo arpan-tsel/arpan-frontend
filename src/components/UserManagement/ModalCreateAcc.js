@@ -5,7 +5,7 @@ const ModalCreateAcc = () => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [role, setRole] = useState("regular");
-  const [password, setPassword] = useState('password123');
+  const [password, setPassword] = useState('');
   const roles = ['regular', 'admin', 'quality'];
   const [msg, setMsg] = useState('');
 

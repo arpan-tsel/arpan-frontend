@@ -8,7 +8,7 @@ import './UserManagement.css';
 import {FaPencilAlt} from 'react-icons/fa';
 import {MdPersonAddAlt1} from 'react-icons/md';
 import ModalCreateAcc from './ModalCreateAcc';
-import {AiFillDelete} from 'react-icons/ai'
+import {AiFillDelete} from 'react-icons/ai';
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -31,34 +31,34 @@ const UserManagement = () => {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState('');
-  const [uuidUser, setUuidUser] = useState('')
+  const [uuidUser, setUuidUser] = useState('');
   const [val, setVal] = useState();
 
   useEffect(()=>{
     getUserManagement()
   }, [page, keyword]);
 
-    //get list of users
-    const getUserManagement = async () => {
-      const response = await axios.get(
-        `getUserManagement?search_query=${keyword}&page=${page}&limit=${limit}`
-      );
-      setUsers(response.data.result);
-      setPage(response.data.page);
-      setPages(response.data.totalPage);
-      setRows(response.data.totalRows);
-    };
+  //get list of users
+  const getUserManagement = async () => {
+    const response = await axios.get(
+       `getUserManagement?search_query=${keyword}&page=${page}&limit=${limit}`
+    );
+    setUsers(response.data.result);
+    setPage(response.data.page);
+    setPages(response.data.totalPage);
+    setRows(response.data.totalRows);
+  };
 
-    const changePage = ({ selected }) => {
-      setPage(selected);
-      if (selected === 9) {
-        setMessage(
-          "Jika tidak menemukan data yang Anda cari, silahkan cari data dengan kata kunci spesifik!"
-        );
-      } else {
-          setMessage("");
-        }
-    };
+  const changePage = ({ selected }) => {
+    setPage(selected);
+    if (selected === 9) {
+      setMessage(
+        "Jika tidak menemukan data yang Anda cari, silahkan cari data dengan kata kunci spesifik!"
+      );
+    } else {
+        setMessage("");
+      }
+  };
 
     //search user account
     const searchData =async(e) => {
@@ -155,6 +155,7 @@ const UserManagement = () => {
           <div class="row">
             <div class="col-12">
               <div class="card">
+
                 <div class="col-sm-6" style={{marginTop:'1%'}}>
                   <div class="col-md-5 offset-md-0">
                     <form onSubmit={searchData}>
@@ -179,6 +180,7 @@ const UserManagement = () => {
                     </form>
                   </div>
                 </div>
+
                 <div class="modal fade" id="modal-createAcc">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -194,17 +196,18 @@ const UserManagement = () => {
                     </div>
                   </div>
                 </div>
+
                 <div style={{marginLeft:'1%', marginRight:'1%'}}>
                   <div className='table-container  mt-5'>
                     <table className="table table-bordered table-hover">
                       <thead>
                         <tr className='row-table'>
-                          <th className='usermanagement-header'>No</th>
+                          <th className='usermanagementno-header'>No</th>
                           <th className='usermanagement-header'>Username</th>
                           <th className='usermanagement-header'>Nama</th>
                           <th className='usermanagement-header'>Role</th>
-                          <th className='usermanagement-header'>Detail</th>
-                          <th className='usermanagement-header'>Delete</th>
+                          <th className='usermanagementdel-header'>Detail</th>
+                          <th className='usermanagementdel-header'>Delete</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -258,7 +261,7 @@ const UserManagement = () => {
                                       <select
                                         className="custom-select"
                                         name="example"
-                                        placeholder='pilih'
+                                        placeholder={role}
                                         onChange={(event) => setRole(event.target.value)}
                                         style={{  }}
                                       >
@@ -329,7 +332,7 @@ const UserManagement = () => {
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h4 class="modal-title">Update User Account</h4>
+                            <h4 class="modal-title">Delete User Account</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
@@ -387,6 +390,7 @@ const UserManagement = () => {
                   />
                   </nav>
                 </div>
+
               </div>
             </div>
           </div>

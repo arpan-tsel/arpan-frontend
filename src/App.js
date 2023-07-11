@@ -12,7 +12,8 @@ import Pointer from './components/Visualization/Pointer/Pointer';
 import DigitalVAS from './components/Visualization/DigitalVAS/DigitalVAS';
 import Basi from './components/Visualization/Basi/Basi';
 import UserManagement from './components/UserManagement/UserManagement';
-
+import DivManagement from './components/DivManagement/DivManagement';
+import DeptManagement from './components/DeptManagement/DeptManagement';
 
 function App() {
   return (
@@ -29,8 +30,8 @@ function App() {
         <Route path='/dashboard/visualization/basi' exact element={<Basi/>}/>
         <Route path='/dashboard/warehouse' exact element={<WarehouseReporting/>}/>
         <Route path='/dashboard/usermanagement' exact element={<UserManagement/>}/>
-        
-        
+        <Route path='/dashboard/divmanagement' exact element={<DivManagement/>}/>
+        <Route path='/dashboard/deptmanagement' exact element={<DeptManagement/>}/>
       </>
     </Routes>
   );

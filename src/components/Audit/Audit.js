@@ -7,17 +7,18 @@ import ModalExcel from './ModalExcel';
 import ModalPeriod1 from './ModalPeriod1';
 import {FaDownload} from 'react-icons/fa';
 import './Audit.css';
+import Select from 'react-select';
 
 const Audit = () => {
     const [show2, setShow2] = useState(false);
     const [show3, setShow3] = useState(false);
 
     const [smonth, setMonth] = useState();
-    const [syear, setYear] = useState(2022);
+    const [syear, setYear] = useState(2023);
     const [smonth2, setMonth2] = useState();
-    const [syear2, setYear2] = useState(2022);
+    const [syear2, setYear2] = useState(2023);
     const [smonth3, setMonth3] = useState();
-    const [syear3, setYear3] = useState(2022);
+    const [syear3, setYear3] = useState(2023);
 
     const [tgl_signoff1, setTgl_signoff1] = useState("");
     const [req_name1, setReq_name1] = useState("");
@@ -42,7 +43,12 @@ const Audit = () => {
     const[req, setReq] = useState("");
     const[req2, setReq2] = useState("");
     const[req3, setReq3] = useState("");
-    const bulan = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    const bulan = [
+        'Januari', 'Februari', 'Maret', 
+        'April', 'Mei', 'Juni', 
+        'Juli', 'Agustus', 'September',
+        'Oktober', 'November', 'Desember'
+    ]
 
     useEffect(() => {
         getAllProjects();
@@ -64,6 +70,11 @@ const Audit = () => {
         setExportData(data);
         // console.log(exporData)
     };
+
+    const options = title_dev.map((requestor) => ({
+        value: requestor,
+        label: requestor,
+    }));
 
 
     return (
@@ -95,58 +106,36 @@ const Audit = () => {
                                 <div className="form-group row">
                                     <label className="col-sm-2 col-form-label">Requestor</label>
                                         <div className="col-sm-8">
-                                            <select
-                                                className="custom-select"
-                                                name="example"
-                                                placeholder='pilih'
-                                                onChange={(event) => setReq(event.target.value)}
+                                            <Select                       
+                                                placeholder="-"
+                                                onChange={(event) => setReq(event.value)}
                                                 style={{ paddingTop: "5px", marginTop: "10px" }}
-                                            >
-                                                {title_dev.map((requestor) => (
-                                                    <option value={requestor}
-                                                    >
-                                                        {requestor}
-                                                    </option>
-                                                ))}
-                                                <option>-</option>
-                                            </select>
+                                                options={options}
+                                            />
                                         </div>
                                     <label className="col-sm-2 col-form-label">OR</label>
                                 </div>
                                 <div className="form-group row">
                                     <label className="col-sm-2 col-form-label">Requestor 2</label>
                                         <div className="col-sm-8">
-                                            <select
-                                                className="custom-select"
-                                                name="example"
-                                                onChange={(event) => setReq2(event.target.value)}
+                                        <Select                       
+                                                placeholder="-"
+                                                onChange={(event) => setReq2(event.value)}
                                                 style={{ paddingTop: "5px", marginTop: "10px" }}
-                                            ><option>-</option>
-                                                {title_dev.map((requestor) => (
-                                                    <option value={requestor}>
-                                                        {requestor}
-                                                    </option>
-                                                ))}
-                                            </select>
+                                                options={options}
+                                            />
                                         </div>
                                     <label className="col-sm-2 col-form-label">OR</label>
                                 </div>
                                 <div className="form-group row">
                                     <label className="col-sm-2 col-form-label">Requestor 3</label>
                                         <div className="col-sm-8">
-                                            <select
-                                                className="custom-select"
-                                                name="example"
-                                                onChange={(event) => setReq3(event.target.value)}
+                                            <Select                       
+                                                placeholder="-"
+                                                onChange={(event) => setReq3(event.value)}
                                                 style={{ paddingTop: "5px", marginTop: "10px" }}
-                                            >
-                                                <option >-</option>
-                                                {title_dev.map((requestor) => (
-                                                    <option value={requestor}>
-                                                        {requestor}
-                                                    </option>
-                                                ))}
-                                            </select>
+                                                options={options}
+                                            />
                                         </div>
                                 </div>
                             </form>
@@ -184,16 +173,14 @@ const Audit = () => {
                                                 <select
                                                     className="custom-select"
                                                     name="bulan"
-                                                    placeholder='pilih'
+                                                    placeholder="pilih"
                                                     onChange={(event) => setMonth(event.target.value)}
                                                 >   
-                                                    <option disabled selected>Bulan</option>
                                                     {bulan.map((bulans) => (
                                                         <option value={bulans}>
                                                             {bulans}
                                                         </option>
-                                                    ))}
-                                                    <option>-</option>   
+                                                    ))}  
                                                 </select>
                                             </li>
                                         </ul>
@@ -279,15 +266,13 @@ const Audit = () => {
                                                                 placeholder='pilih'
                                                                 onChange={(event) => setMonth2(event.target.value)}
                                                                                 
-                                                            >   <option disabled selected>Bulan</option>
+                                                            >   
                                                                 {bulan.map((bulans) => (
                                                                     <option value={bulans}
                                                                      >
                                                                         {bulans}
                                                                     </option>
                                                                 ))}
-                                                                <option>-</option>
-                                                                
                                                             </select>
                                                         </li>
                                                     </ul>
@@ -376,14 +361,13 @@ const Audit = () => {
                                                                     placeholder='pilih'
                                                                     onChange={(event) => setMonth3(event.target.value)}
                                                                                 
-                                                                >   <option disabled selected>Bulan</option>
+                                                                >   
                                                                     {bulan.map((bulans) => (
                                                                         <option value={bulans}
                                                                         >
                                                                             {bulans}
                                                                         </option>
                                                                     ))}
-                                                                        <option>-</option>
                                                                         
                                                                 </select>
                                                             </li>

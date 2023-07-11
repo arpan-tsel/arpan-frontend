@@ -33,9 +33,9 @@ const WarehouseReporting = () => {
         navigate("/");
       }
     }
-}
+  }
 
-const axiosJWT = axios.create();
+  const axiosJWT = axios.create();
 
 axiosJWT.interceptors.request.use(async (config) => {
   const currentDate = new Date();
@@ -99,13 +99,16 @@ const handleSubmit = async (event) =>{
       onUploadProgress: (Data) => {
         setUploaded(Math.round((Data.loaded / Data.total) * 100));
       },
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     })
     console.log("response data", res.data.message); 
     console.log("form data", formData);
     setMessage(res.data.message)
     refreshPage(res.data.message);
   } catch (error){
-      refreshPageError(error);
+      refreshPageError("File yang Anda upload tidak sesuai");
       console.log(error)
     }
   setButtonDisabled(false);

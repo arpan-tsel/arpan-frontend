@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
 import { useNavigate, Link } from 'react-router-dom';
-import {FaCubes, FaUserAlt, FaTools, FaUsersCog, FaBuilding} from 'react-icons/fa'
+import {FaCity, FaUserAlt, FaTools, FaUsersCog, FaBuilding} from 'react-icons/fa'
 import {HiClipboardList, HiChat} from 'react-icons/hi'
 import {BsListCheck} from 'react-icons/bs'
 import {AiOutlineLineChart} from 'react-icons/ai'
@@ -155,7 +155,7 @@ const Sidebar = () => {
                   <br/>
                   <li className="nav-item menu-close">
                     <a href='#' className='nav-link'>
-                      <i className="nav-icon fas" ><FaTools/></i>
+                      <i className="nav-icon fas"><FaTools/></i>
                       <p>
                         Administrator Menu
                         <i className="fas fa-angle-left right"/>
@@ -173,10 +173,20 @@ const Sidebar = () => {
                     </ul>
                     <ul className="nav nav-treeview">
                       <li className="nav-item">
-                        <Link to= '/dashboard/usermanagement' className='nav-link'>
+                        <Link to= '/dashboard/divmanagement' className='nav-link'>
+                          <i className="far nav-icon"><FaCity/> </i>
+                          <p>
+                            Division Management
+                          </p>
+                        </Link>
+                      </li>
+                    </ul>
+                    <ul className="nav nav-treeview">
+                      <li className="nav-item">
+                        <Link to= '/dashboard/deptmanagement' className='nav-link'>
                           <i className="far nav-icon"><FaBuilding/> </i>
                           <p>
-                            Div & Dept Management
+                            Department Management
                           </p>
                         </Link>
                       </li>

@@ -116,7 +116,8 @@ const Dashboard = () => {
 
   //pie chart
   const fetchData = () =>  {
-    axios.get(`piechartdashboard`).then(res => {
+    axios.get(`piechartdashboard`,
+    ).then(res => {
       const resp = res.data;
       return resp
     }).then((resp) => {

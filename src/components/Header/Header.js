@@ -48,12 +48,12 @@ const Header = () => {
     });
  
     const getUsers = async () => {
-        const response = await axiosJWT.get('userAccount', {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        });
-        setUsers(response.data);
+      const response = await axiosJWT.get('userAccount', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setUsers(response.data);
     }
 
 

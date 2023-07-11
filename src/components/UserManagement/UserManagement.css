@@ -2,6 +2,22 @@
   width: 35%;
 }
 
+.usermanagementno-header{
+  top:0;
+  position: sticky;
+  background-color: #6c757d;
+  color:white; 
+  width: 60px;
+}
+
+.usermanagementdel-header{
+  top:0;
+  position: sticky;
+  background-color: #6c757d;
+  color:white; 
+  width: 175px;
+}
+
 .usermanagement-header{
     top:0;
     position: sticky;

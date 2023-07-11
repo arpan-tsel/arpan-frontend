@@ -5,6 +5,7 @@ import './UserProfile.css'
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import profilePict from '../img/profile.jpg';
+import Select from "react-select";
 
 const UserProfile = () => {
   const [name, setName] = useState("");
@@ -12,13 +13,49 @@ const UserProfile = () => {
   const [employee_title, setEmployeeTitle] = useState("");
   const [department, setDepartment] = useState("");
   const [division, setDivision] = useState("");
-  const [sub_directorate, setSubDirectorate] = useState("");
+  const [sub_directorate, setSubDirectorate] = useState("Business Solution Management");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [msg, setMsg] = useState("");
+  const [divisions, setDivisions] = useState([]);
   const {id} = useParams()
+  const [departments, setDepartments] = useState([]);
+
+  useEffect(() => {
+    getAllDivisions();
+  }, []);
+
+  //get all divisions
+  const getAllDivisions = async() =>{
+    const res = await axios.get(`getAllDivisions`);
+    const allDivision = res.data.map((data) => data.division);
+    setDivisions([...new Set(allDivision)]); //distinct
+    return; 
+  }
+
+  const options = divisions.map((division) => ({
+    value: division,
+    label: division,
+  }));
+  
+  useEffect(() => {
+    getAllDepartments();
+  }, []);
+
+  //get all divisions
+  const getAllDepartments = async() =>{
+    const res = await axios.get(`getAllDepartments`);
+    const allDepartment = res.data.map((data) => data.department);
+    setDepartments([...new Set(allDepartment)]); //distinct
+    return; 
+  }
+
+  const optionsdept = departments.map((dept) => ({
+    value: dept,
+    label: dept,
+  }));
 
   useEffect(() => {
     getUserById();
@@ -179,15 +216,25 @@ const UserProfile = () => {
                             </div>
                           </div>
                           <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Department</label>
+                            <label className="col-sm-2 col-form-label">Division</label>
                             <div className="col-sm-10">
-                              <input type="text" className="form-control" value={department} onChange={(e) => setDepartment(e.target.value)} placeholder="Department" />
+                              <Select
+                                placeholder={division}
+                                onChange={(event) => setDivision(event.value)}
+                                options={options}
+                                style={{  }}
+                              />  
                             </div>
                           </div>
                           <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Division</label>
+                            <label className="col-sm-2 col-form-label">Department</label>
                             <div className="col-sm-10">
-                              <input type="text" className="form-control" value={division} onChange={(e) => setDivision(e.target.value)} placeholder="Division" />
+                              <Select
+                                placeholder={department}
+                                onChange={(event) => setDepartment(event.value)}
+                                options={optionsdept}
+                                style={{  }}
+                              />
                             </div>
                           </div>
                           <div className="form-group row">
