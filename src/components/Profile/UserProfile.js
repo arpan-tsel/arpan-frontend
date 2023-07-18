@@ -44,7 +44,7 @@ const UserProfile = () => {
     getAllDepartments();
   }, []);
 
-  //get all divisions
+  //get all dept
   const getAllDepartments = async() =>{
     const res = await axios.get(`getAllDepartments`);
     const allDepartment = res.data.map((data) => data.department);
@@ -206,7 +206,7 @@ const UserProfile = () => {
                           <div className="form-group row">
                             <label className="col-sm-2 col-form-label">Employee Name</label>
                             <div className="col-sm-10">
-                              <p className="text-left form-control">{name}</p>
+                              <div className="text-left form-control">{name}</div>
                             </div>
                           </div>
                           <div className="form-group row">
@@ -216,14 +216,15 @@ const UserProfile = () => {
                             </div>
                           </div>
                           <div className="form-group row">
+                            <label className="col-sm-2 col-form-label">Sub-Directorate</label>
+                            <div className="col-sm-10">
+                              <div className="text-left form-control">{sub_directorate}</div>
+                            </div>
+                          </div>
+                          <div className="form-group row">
                             <label className="col-sm-2 col-form-label">Division</label>
                             <div className="col-sm-10">
-                              <Select
-                                placeholder={division}
-                                onChange={(event) => setDivision(event.value)}
-                                options={options}
-                                style={{  }}
-                              />  
+                              <div className="text-left form-control">{division}</div>
                             </div>
                           </div>
                           <div className="form-group row">
@@ -235,12 +236,6 @@ const UserProfile = () => {
                                 options={optionsdept}
                                 style={{  }}
                               />
-                            </div>
-                          </div>
-                          <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Sub-Directorate</label>
-                            <div className="col-sm-10">
-                              <input type="text" className="form-control" value={sub_directorate} onChange={(e) => setSubDirectorate(e.target.value)} placeholder="sub directorate" />
                             </div>
                           </div>
                           <div className="form-group row">

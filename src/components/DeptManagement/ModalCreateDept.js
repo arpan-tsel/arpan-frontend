@@ -84,7 +84,7 @@ const ModalCreateDept = () => {
         <p className="has-text-centered">{msg}</p>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-danger">Create Division</button>
+          <button type="submit" class="btn btn-danger">Create Department</button>
         </div>
       </form>
     </div>
