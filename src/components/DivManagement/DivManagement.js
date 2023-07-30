@@ -178,7 +178,7 @@ const DivManagement = () => {
                                         <table className="table table-bordered table-hover">
                                             <thead>
                                                 <tr className='row-table'>
-                                                    <th className='divdeptmanagementno-header'>No</th>
+                                                    <th className='divdeptmanagementno-header'>ID</th>
                                                     <th className='divdeptmanagement-header'>Division</th>
                                                     <th className='divdeptmanagement-header'>Sub-Directorate</th>
                                                     <th className='divdeptmanagementdel-header'>Detail</th>
@@ -187,8 +187,8 @@ const DivManagement = () => {
                                             </thead>
                                             <tbody>
                                                 {divisions.map((division, index) => ( 
-                                                    <tr key={division.divisionid}>
-                                                        <td>{index + 1}</td>
+                                                    <tr key={division.id}>
+                                                        <td>{division.id}</td>
                                                         <td>{division.division}</td>
                                                         <td>{division.sub_directorate}</td>
                                                         <td>

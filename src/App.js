@@ -14,6 +14,7 @@ import Basi from './components/Visualization/Basi/Basi';
 import UserManagement from './components/UserManagement/UserManagement';
 import DivManagement from './components/DivManagement/DivManagement';
 import DeptManagement from './components/DeptManagement/DeptManagement';
+import Visualization from './components/Visualization/Visualization';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='/dashboard/usermanagement' exact element={<UserManagement/>}/>
         <Route path='/dashboard/divmanagement' exact element={<DivManagement/>}/>
         <Route path='/dashboard/deptmanagement' exact element={<DeptManagement/>}/>
+        <Route path='/dashboard/visualization' exact element={<Visualization/>}/>
       </>
     </Routes>
   );

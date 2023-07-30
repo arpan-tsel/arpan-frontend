@@ -50,7 +50,7 @@ const DeptManagement = () => {
         getDeptManagement()
     }, [page, keyword]);
 
-    //get list of diepartments
+    //get list of departments
     const getDeptManagement = async () => {
         const response = await axios.get(
             `getDepartmentManagement?search_query=${keyword}&page=${page}&limit=${limit}`
@@ -199,7 +199,7 @@ const DeptManagement = () => {
                                         <table className="table table-bordered table-hover">
                                             <thead>
                                                 <tr className='row-table'>
-                                                    <th className='divdeptmanagementno-header'>No</th>
+                                                    <th className='divdeptmanagementno-header'>ID</th>
                                                     <th className='divdeptmanagement-header'>Department</th>
                                                     <th className='divdeptmanagement-header'>Division</th>
                                                     <th className='divdeptmanagementdel-header'>Detail</th>
@@ -208,8 +208,8 @@ const DeptManagement = () => {
                                             </thead>
                                             <tbody>
                                                 {departments.map((department, index) => ( 
-                                                    <tr key={department.departmentid}>
-                                                        <td>{index + 1}</td>
+                                                    <tr key={department.id}>
+                                                        <td>{department.id}</td>
                                                         <td>{department.department}</td>
                                                         <td>{department.division}</td>
                                                         <td>

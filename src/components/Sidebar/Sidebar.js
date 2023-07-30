@@ -15,14 +15,36 @@ const Sidebar = () => {
   const [token, setToken] = useState('');
   const [expire, setExpire] = useState('');
   const [users, setUsers] = useState([]);
+  const [limit, setLimit] = useState(10);
   const navigate = useNavigate();
   const [userId, setUserId] = useState("");
+  const [rows, setRows] = useState(0);
+  const [pages, setPages] = useState(0);
+  const [keyword, setKeyword] = useState("");
+  const [page, setPage] = useState(0);
+  const [divisions, setDivisions] = useState([]);
+  const [division, setDivision] = useState("");
  
   useEffect(() => {
     setUserId(localStorage.getItem("uuid"));
     refreshToken();
     getUsers();
   }, []);
+
+  useEffect(()=>{
+    getDivManagement()
+  }, [page, keyword]);
+
+  //get list of divisions
+  const getDivManagement = async () => {
+    const response = await axios.get(
+        `getDivisionManagement?search_query=${keyword}&page=${page}&limit=${limit}`
+    );
+    setDivisions(response.data.result);
+    setPage(response.data.page);
+    setPages(response.data.totalPage);
+    setRows(response.data.totalRows);
+  };
     
  
   const refreshToken = async () => {
@@ -109,31 +131,16 @@ const Sidebar = () => {
                   </p>
                 </a>
                 <ul className="nav nav-treeview">
-                  <li className="nav-item">
-                    <Link to= '/dashboard/visualization/prepaid' className='nav-link'>
-                      <i className="far fa-circle nav-icon" />
-                      <p>Prepaid</p>
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to= '/dashboard/visualization/digitalvas' className='nav-link'>
-                      <i className="far fa-circle nav-icon" />
-                      <p>Digital and VAS</p>
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to= '/dashboard/visualization/pointer' className='nav-link'>
-                      <i className="far fa-circle nav-icon" />
-                      <p>Pointer</p>
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to= '/dashboard/visualization/basi' className='nav-link'>
-                      <i className="far fa-circle nav-icon" />
-                      <p>BuASI</p>
-                    </Link>
-                  </li>
+                  {divisions.map((division, index) => (
+                    <li className="nav-item">
+                      <Link to = '/dashboard/visualization' state = {{division: division.division}} className='nav-link'>
+                        <i className="far fa-circle nav-icon"/>
+                        <p>{division.division}</p>
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
+                
               </li>
               <li className="nav-item">
                 <Link to= '/dashboard/warehouse' className='nav-link'>
