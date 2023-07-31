@@ -91,7 +91,7 @@ const Dashboard = () => {
       setLinedata(
         {
           datasets:[
-            {
+          {
             label:labelis[1],
             data: datas[1],
             fill: false, 
@@ -124,16 +124,27 @@ const Dashboard = () => {
       console.log("resss", resp)
       const datas = [];
       for(var i of resp) {
-          datas.push(i.value)
+        datas.push(i.value)
+      }
+      const labels =[];
+
+      for(var i of resp) {
+        labels.push(i.division)
+      }
+
+      for(var i = 0; i<resp; i++ ) {
+        if (typeof(labels[i]) == "undefined"){
+          labels[i] = ''
+        }
       }
       setData({
         datasets: [{
           data:datas,
           backgroundColor:[
-            '#f56954', '#00a65a', '#f39c12', '#00c0ef'
+            '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#ef009f'
           ]
         },],
-        labels:['Prepaid', 'Digital & VAS', 'BuASI', 'POINTER'], 
+        labels:labels, 
       })
       setChartDataPie(data)
       console.log(data)
